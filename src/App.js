@@ -1,12 +1,14 @@
 import React from 'react';
 import CreateImage from './components/CreateImage';
 import ImageList from './components/ImageList';
+import Navbar from './components/NavBar';
 
 const App = () => {
   return (
-    <div className="app">
-      <ImageList />
+    <div>
+      <Navbar />
       <CreateImage />
+      <ImageList />
     </div>
   );
 };

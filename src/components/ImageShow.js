@@ -12,26 +12,38 @@ const ImageShow = ({ image }) => {
   const handleEditClick = () => {
     setShowEdit(!showEdit);
   };
-  let content = <h3>{image.title}</h3>;
+  const handleSubmit = () => {
+    setShowEdit(false);
+  };
+  let content = <h3 className="text-lg font-semibold">{image.title}</h3>;
 
   if (showEdit) {
-    content = <ImageEdit onSubmit={handleEditClick} image={image} />;
+    content = <ImageEdit onSubmit={handleSubmit} image={image} />;
   }
 
   return (
-    <div className="book-show">
+    <div className="image-show bg-white rounded-lg shadow-lg p-1">
       <img
-        src={`https://picsum.photos/seed/${image.id}/200/200`}
+        src={`https://picsum.photos/seed/${image.id}/300/300`}
         alt="photos"
+        className="rounded-lg mb-2"
       />
-      {content}
-      <div className="actions">
-        <button className="edit" onClick={handleEditClick}>
-          Edit
-        </button>
-        <button className="delete" onClick={handleDeleteClick}>
-          Delete
-        </button>
+      <div className=" items-center">
+        {content}
+        <div className="actions">
+          <button
+            className="text-sm text-purple-800 bg-purple-200 px-3 py-1 rounded-md mr-2 hover:bg-purple-300 focus:outline-none focus:bg-purple-300"
+            onClick={handleEditClick}
+          >
+            Edit
+          </button>
+          <button
+            className="text-sm text-red-800 bg-red-200 px-3 py-1 rounded-md hover:bg-red-300 focus:outline-none focus:bg-red-300"
+            onClick={handleDeleteClick}
+          >
+            Delete
+          </button>
+        </div>
       </div>
     </div>
   );

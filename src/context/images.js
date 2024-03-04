@@ -21,7 +21,7 @@ function Provider({ children }) {
   const editImageById = (id, newTitle) => {
     const updatedImages = images.map((image) => {
       if (image.id === id) {
-        return { ...images, title: newTitle };
+        return { ...image, title: newTitle };
       }
       return image;
     });

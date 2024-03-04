@@ -16,17 +16,27 @@ const CreateImage = () => {
   };
 
   return (
-    <div className="book-create">
-      <h3>Add a Image</h3>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="in">Add Image</label>
-        <input
-          className="input"
-          id="in"
-          value={title}
-          onChange={handleChange}
-        />
-        <button className="button">Create!</button>
+    <div className="max-w-sm mx-auto p-4 bg-gray-100 rounded-lg shadow-lg mb-4">
+      <h3 className="text-2xl font-semibold text-purple-800 mb-1">
+        Create Random Image!
+      </h3>
+      <form onSubmit={handleSubmit} className="space-y-4">
+        <div>
+          <input
+            id="imageInput"
+            type="text"
+            value={title}
+            onChange={handleChange}
+            className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-purple-800"
+            placeholder="Enter image Title "
+          />
+        </div>
+        <button
+          type="submit"
+          className="w-full bg-purple-800 text-white py-2 px-4 rounded-md hover:bg-purple-700 transition duration-300"
+        >
+          Create!
+        </button>
       </form>
     </div>
   );
