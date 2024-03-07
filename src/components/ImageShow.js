@@ -7,7 +7,7 @@ const ImageShow = ({ image }) => {
   const { deleteImageById } = useContext(ImagesContext);
   const [showEdit, setShowEdit] = useState(false);
   const handleDeleteClick = () => {
-    deleteImageById(image.id);
+    deleteImageById(image._id);
   };
   const handleEditClick = () => {
     setShowEdit(!showEdit);
@@ -24,7 +24,7 @@ const ImageShow = ({ image }) => {
   return (
     <div className="image-show bg-white rounded-lg shadow-lg p-1">
       <img
-        src={`https://picsum.photos/seed/${image.id}/300/300`}
+        src={`https://picsum.photos/seed/${image._id}/300/300`}
         alt="photos"
         className="rounded-lg mb-2"
       />

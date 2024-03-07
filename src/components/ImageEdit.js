@@ -12,7 +12,7 @@ const ImageEdit = ({ image, onSubmit }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     onSubmit();
-    editImageById(image.id, newTitle);
+    editImageById(image._id, newTitle);
   };
 
   return (
